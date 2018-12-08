@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   initMap = () => {
-    map = new google.maps.Map(document.getElementById('map'), {
+    const map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -37.397, lng: 150.644},
       zoom: 8
     });

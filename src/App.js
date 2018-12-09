@@ -8,7 +8,8 @@ class App extends Component {
     loadScript("htpps://maps.googleapis.com/maps/api/js?key=AIzaSyBnR461-IpsYquMTh4jytwZceXMQrbHVeY&callback=initMap")
   }
   initMap = () => {
-    const map = new google.maps.Map(document.getElementById('map'), {
+    // Define google though the window
+    const map = new window.google.maps.Map(document.getElementById('map'), {
       center: {lat: -37.397, lng: 150.644},
       zoom: 8
     });
@@ -24,7 +25,7 @@ class App extends Component {
 }
 // Use the loadScript function by passing a parameter to it
 
-/**
+/** The `script tag to be integrated to react`
 Create a function called loadScript so that we can write a function using the
 `function` keyword without any problems.
 This `function` will take a parameter called the `url`

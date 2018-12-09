@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
   // The `renderMap` loads the script
   renderMap = () => {
-    loadScript("htpps://maps.googleapis.com/maps/api/js?key=MY-API-KEY&callback=initMap")
+    loadScript("htpps://maps.googleapis.com/maps/api/js?key=AIzaSyBnR461-IpsYquMTh4jytwZceXMQrbHVeY&callback=initMap")
   }
   initMap = () => {
     const map = new google.maps.Map(document.getElementById('map'), {

@@ -10,7 +10,6 @@ class Map extends Component {
     this.getVenues()
   }
 
-  //windowInitMap = this.initMap
   getVenues = () => {
     const endPoint = "https://api.foursquare.com/v2/venues/explore?"
     const parameters = {
@@ -31,17 +30,23 @@ class Map extends Component {
     })
   }
   initMap = () => {
+    // Create an infowindow
     const infowindow = new window.google.maps.infowindow()
+    // Display dynamic markers
     this.state.venues.map(myVenue => {
       const contentString = `${myVenue.venue.name}`
+      // Create a marker
       const marker = new window.google.maps.Marker({
         position: {
           lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng
         },
         title: myVenue.venue.name
       })
+      // Click on a marker
       marker.addEventListener('click', function() {
+        // Change the content of the infowindow
         infowindow.setContent(contentString)
+        // Open an infowindow
         infowindow.open(marker)
       })
     })

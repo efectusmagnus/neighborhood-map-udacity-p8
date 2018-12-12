@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
-import axios from 'axios';
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+//import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import MuseumsMarker from './MuseumsMarker';
+//import axios from 'axios';
 // See: https://medium.com/@yelstin.fernandes/render-a-map-component-using-react-google-maps-5f7fb3e418bb
 class Map extends Component {
-  state = {
+  /*state = {
     venues: []
+
   }
   componentDidMount() {
     this.getVenues()
@@ -17,7 +20,8 @@ class Map extends Component {
       client_secret: "E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT",
       query: "arts",
       near: "Paderborn",
-      v: "20180323"
+      v: "20180323",
+      photo_id: ""
     }
     axios.get(endPoint + new URLSearchParams(parameters))
     .then(response => {
@@ -63,6 +67,38 @@ class Map extends Component {
       <div>
         <MyMap
           containerElement= {<div style={{height: `80vh`, width: `99vw`}}/>}
+          mapElement={<div style={{height: `100%`}} />}
+        />
+      </div>
+    );
+  }
+};*/
+  render() {
+    let animateMarker = this.props.animateMarker;
+    // Generate map from react-google-maps
+    const MyMap = withGoogleMap(props => (
+      <GoogleMap
+        defaultCenter = {{lat: 51.718922, lng: 8.757509}}
+        defaultZoom = {16}
+        /*onTilesLoaded={() =>
+          // Add title to iframe
+          (document.getElementByTagName('iframe')[0].title = 'GoogleMaps')
+        }*/
+      >
+      {this.props.filteredMuseums && this.props.filteredMuseums.map(marker => (
+        <MuseumsMarker
+          marker={marker}
+          key={marker.id}
+          animateMarker={animateMarker}
+          hasError={this.props.hasError}
+        />
+      ))}
+      </GoogleMap>
+    ))
+    return(
+      <div>
+        <MyMap
+          containerElement= {<div className="container-element" />}
           mapElement={<div style={{height: `100%`}} />}
         />
       </div>

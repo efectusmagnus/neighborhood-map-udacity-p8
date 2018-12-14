@@ -80,7 +80,7 @@ ul {
 
 .sidenav .closebtn {
   position: absolute;
-  top: 22px;
+  top: 12px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
@@ -99,15 +99,11 @@ ul {
   margin-left: 12px;
   height: 2em;
 }
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
+
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
-/*----------------------------------- Main ----------------------------------*/
+
 
 /*
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -158,6 +154,7 @@ html, body {
 }
 .map-container {
   background-color: black;
+  transition: margin-left .5s;
 }
 
 .container-element {
@@ -177,9 +174,6 @@ html, body {
   overflow-y: hidden;
 }
 
-.museums-filter {
-  margin-bottom: 10px;
-}
 .museums-item {
   width: 30vw;
 }

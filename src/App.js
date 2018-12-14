@@ -88,9 +88,8 @@ class App extends Component {
             <ListError />
           }
         </div>
-        <section key={leftOrRight} role="main">
+        <section key={leftOrRight} className="map-container" role="application">
           <button className="hamburger-btn" onClick={this.showHide}>&#9776;</button>
-          <div className="map-container">
             <MapError>
               <Map
                 museums={this.state.museums}
@@ -101,7 +100,6 @@ class App extends Component {
                 hasError={this.state.hasError}
               />
             </MapError>
-          </div>
         </section>
       </div>
     );

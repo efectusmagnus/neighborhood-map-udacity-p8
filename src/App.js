@@ -67,7 +67,7 @@ class App extends Component {
       <div className="App">
         <div id={openOrClose} className="sidenav">
           <button className="closebtn" onClick={this.showHide}>&times;</button>
-          <h1>Musea Finder Paderborn</h1>
+          <h1 tabIndex="0">Musea Finder Paderborn</h1>
           <input
             className="museums-filter"
             aria-label="Filter the list of museums"

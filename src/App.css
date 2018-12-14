@@ -1,7 +1,109 @@
+/*.App {
+  display: flex;
+}*/
 
-.App {
-  text-align: center;
+/*-------------------- Side Navigation push (off-canvas) --------------------*/
+/*-- source inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push ---*/
+
+/*---- Beginn of Open Navigation Menu and deplace map to right -----*/
+
+#navToRight {
+  width: 250px;
 }
+
+#mapToRight {
+  margin-left: 255px;
+}
+
+/*---- End of Open Navigation Menu and deplace map to right -----*/
+
+/*---- Beginn of Close Navigation Menu and deplace map to left -----*/
+
+#navToLeft {
+  width: 0;
+}
+
+#mapToLeft {
+  margin-left: 0;
+}
+/*---- End of Close Navigation Menu and deplace map to left -----*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav .museums-filter {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1.8em;
+  padding: 0.5em;
+  width: 13em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav h1 {
+  font-size: 2em;
+  color: white;
+}
+
+.sidenav li {
+  font-size: larger;
+  color: #818181;
+}
+
+.sidenav h1,
+.sidenav li {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav li:hover,
+.sidenav .closebtn:hover,
+.hamburger-btn:hover {
+  color: #f1f1f1;
+  background-color: orange;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #818181;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 50%;
+}
+.hamburger-btn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 50%;
+}
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+/*---------------- End of Side Navigation push (off-canvas)------------------*/
+/*----------------------------------- Main ----------------------------------*/
+
+/*
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -31,17 +133,96 @@
     transform: rotate(360deg);
   }
 }
+*/
+*, :after, :before {
+  box-sizing: border-box;
+}
 
+html, body {
+  /*height: 100%;*/
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-family: monospace, sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.map-container {
+  width: 70vw;
+}
+
+.container-element {
+  width: 100vw;
+  height: 100vh;
+}
 #map {
   height: 100vh;
   width: 100vw;
 }
-html, body {
+.map-container {
+  width: 75%;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.museums-filter {
+  margin-bottom: 10px;
+}
+.museums-item {
+  width: 30vw;
+}
+.credits {
+  font-size: 1em;
+  color: blue;
+  margin: 1% 0;
+}
+
+.museumIcon {
+  width: 75px;
+  height: auto;
+}
+.map-element {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
-.container-element {
-  height: 80vh;
-  width: 99vw;
+h1.list-error {
+  margin: 50px 0 5px 0;
 }
+
+.header {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Header*/
+
+.museums-filter {
+  padding: 1vh;
+  margin-bottom: 1.5vh;
+}
+
+/*-------------------- Media Queries --------------------*/
+
+/*-------------------- Side Navigation push (off-canvas) --------------------*/
+@media screen and (max-height: 450px){
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav li {
+    font-size: 18px;
+  }
+}
+/*---------------- End of Side Navigation push (off-canvas)------------------*/

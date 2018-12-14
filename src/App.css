@@ -1,6 +1,3 @@
-/*.App {
-  display: flex;
-}*/
 
 /*-------------------- Side Navigation push (off-canvas) --------------------*/
 /*-- source inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push ---*/
@@ -27,6 +24,7 @@
   margin-left: 0;
 }
 /*---- End of Close Navigation Menu and deplace map to left -----*/
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -89,6 +87,7 @@ ul {
   border: transparent;
   border-radius: 50%;
 }
+
 .hamburger-btn {
   font-size: 30px;
   cursor: pointer;
@@ -102,37 +101,6 @@ ul {
 
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
 
-
-/*
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
 *, :after, :before {
   box-sizing: border-box;
 }
@@ -143,6 +111,7 @@ html, body {
   padding: 0;
   text-rendering: optimizeLegibility;
   font-family: monospace, sans-serif;
+  background-color: black;
 }
 
 .container {
@@ -152,6 +121,7 @@ html, body {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 .map-container {
   background-color: black;
   transition: margin-left .5s;
@@ -161,6 +131,7 @@ html, body {
   width: 100vw;
   height: 100vh;
 }
+
 #map {
   height: 100vh;
   width: 100vw;
@@ -201,12 +172,13 @@ h1.list-error {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+footer {
+  background-color: black;
+  text-align: center;
+}
 
-/* Header*/
-
-.museums-filter {
-  padding: 1vh;
-  margin-bottom: 1.5vh;
+p {
+  color: #ac9b9b;
 }
 
 /*-------------------- Media Queries --------------------*/
@@ -221,3 +193,34 @@ h1.list-error {
   }
 }
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
+
+/*
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/

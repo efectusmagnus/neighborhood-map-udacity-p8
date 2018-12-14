@@ -5,6 +5,7 @@ import SlideMenu from './js/SlideMenu';
 import ListError from './js/ListError';
 import MapError from './js/MapError';
 import escapeRegExp from 'escape-string-regexp';
+//import hamburger from './images/hamburger-menu-white.png';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class App extends Component {
       .then(data => this.setState({museums: data.response.venues}))
       .catch(error => this.setState({hasError: true}))
     }
-    // This is for the <input class="museumFilter">
+    // This is for the <input class="museums-filter">
     updateQuery(query) {
       this.setState({query: query})
     }
@@ -53,35 +54,28 @@ class App extends Component {
     } else {
       filteredMuseums = this.state.museums
     }
+
     // Apply style to menu list
-    let openOrClose = "menuList hideList";
+    let openOrClose = "navToLeft";
+    let leftOrRight = "mapToLeft"
     if (this.state.openMenu === true) {
-      openOrClose = "menuList showList"
+      openOrClose = "navToRight";
+      leftOrRight = "mapToRight";
     }
+
     return(
       <div className="App">
-        <div className="skin">
-          <div key="menu-togle">
-            <button className="hamburger">
-              <span className="before"></span>
-              <span className="middle"></span>
-              <span className="after"></span>
-            </button>
-          </div>
-          <header key="site-header">
-            <a className="logo" href="/">Home</a>
-            <h1 tabIndex="0">Musea Finder</h1>
-            <h2 tabIndex="0">Paderborn</h2>
-            <input
-              className="museum-filter"
-              aria-label="Filter the list of museums"
-              placeholder="Filter Museums"
-              value={this.state.query}
-              onChange={(event) => this.updateQuery(event.target.value)}
-              type="text"
-              />
-            <div className="menuList"></div>
-          </header>
+        <div id={openOrClose} className="sidenav">
+          <button className="closebtn" onClick={this.showHide}>&times;</button>
+          <h1>Musea Finder Paderborn</h1>
+          <input
+            className="museums-filter"
+            aria-label="Filter the list of museums"
+            placeholder="Filter Museums"
+            value={this.state.query}
+            onChange={(event) => this.updateQuery(event.target.value)}
+            type="text"
+          />
           {(filteredMuseums)
             ?
             <SlideMenu
@@ -94,30 +88,23 @@ class App extends Component {
             <ListError />
           }
         </div>
-        <MapError>
-          <Map
-            museums={this.state.museums}
-            filteredMuseums={filteredMuseums}
-            onMarkerClick={this.toggleInfoWindow}
-            onHandleClick={this.onHandleClick}
-            animateMarker={this.state.animateMarker}
-            hasError={this.state.hasError}
-          />
-        </MapError>
+        <section key={leftOrRight} role="main">
+          <button className="hamburger-btn" onClick={this.showHide}>&#9776;</button>
+          <div className="map-container">
+            <MapError>
+              <Map
+                museums={this.state.museums}
+                filteredMuseums={filteredMuseums}
+                onMarkerClick={this.toggleInfoWindow}
+                onHandleClick={this.onHandleClick}
+                animateMarker={this.state.animateMarker}
+                hasError={this.state.hasError}
+              />
+            </MapError>
+          </div>
+        </section>
       </div>
     );
   }
 }
 export default App;
-
-
-/*class App extends Component {
-  render() {
-    return(
-      <div className="App">
-        <Map />
-      </div>
-    )
-  }
-}
- export default App;*/

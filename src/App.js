@@ -17,28 +17,31 @@ class App extends Component {
         openMenu: false,
         hasError: false
       }
-      this.onHandleClick = this.onHandleClick.bind(this)
-      this.showHide = this.showHide.bind(this)
-    }
-    componentDidMount() {
-      // Fetch data from Foursquare
-      fetch('https://api.foursquare.com/v2/venues/search?ll=51.718922,8.757509&categoryId=4bf58dd8d48988d181941735&client_id=LLJCIDDYXOKBAJ4AVOO5AEYPFW15KJ3OVUAWLKKCKDGWJDKI&client_secret=E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT&v=20180323')
-      .then(response => response.json())
-      .then(data => this.setState({museums: data.response.venues}))
-      .catch(error => this.setState({hasError: true}))
-    }
-    // This is for the <input class="museums-filter">
-    updateQuery(query) {
-      this.setState({query: query})
-    }
-    // This is for the <li class="listMuseum">
-    onHandleClick(e, key) {
-      let animateMarker = this.state.museums.filter(mu => mu.id === key)
-      this.setState({
-        animateMarker: animateMarker
-      })
-    }
+    this.onHandleClick = this.onHandleClick.bind(this)
+    this.showHide = this.showHide.bind(this)
+  }
+  componentDidMount() {
+    // Fetch data from Foursquare
+    fetch('https://api.foursquare.com/v2/venues/search?ll=51.718922,8.757509&categoryId=4bf58dd8d48988d181941735&client_id=LLJCIDDYXOKBAJ4AVOO5AEYPFW15KJ3OVUAWLKKCKDGWJDKI&client_secret=E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT&v=20180323')
+    .then(response => response.json())
+    .then(data => this.setState({museums: data.response.venues}))
+    .catch(error => this.setState({hasError: true}))
+  }
+
+  // This is for the <input class="museums-filter">
+  updateQuery(query) {
+    this.setState({query: query})
+  }
+  // This is for the <li class="museums-filter">
+  // Set the query state to the value typed by the user
+  onHandleClick(e, key) {
+    let animateMarker = this.state.museums.filter(m => m.id === key)
+    this.setState({
+      animateMarker: animateMarker
+    })
+  }
   // This is for the hamburger menu
+  // Open/close the navigation menu
   showHide() {
     const openMenu = this.state.openMenu;
     this.setState({
@@ -55,7 +58,7 @@ class App extends Component {
       filteredMuseums = this.state.museums
     }
 
-    // Apply style to menu list
+    // Apply style to navigation menu and the map to open or close the menu
     let openOrClose = "navToLeft";
     let leftOrRight = "mapToLeft"
     if (this.state.openMenu === true) {
@@ -65,6 +68,7 @@ class App extends Component {
 
     return(
       <div className="App">
+      <button className="hamburger-btn" onClick={this.showHide}>&#9776;</button>
         <div id={openOrClose} className="sidenav">
           <button className="closebtn" onClick={this.showHide}>&times;</button>
           <h1 tabIndex="0">Musea Finder Paderborn</h1>
@@ -88,8 +92,8 @@ class App extends Component {
             <ListError />
           }
         </div>
-        <section key={leftOrRight} className="map-container" role="application">
-          <button className="hamburger-btn" onClick={this.showHide}>&#9776;</button>
+        <section id={leftOrRight} className="map-container" role="application">
+
             <MapError>
               <Map
                 museums={this.state.museums}

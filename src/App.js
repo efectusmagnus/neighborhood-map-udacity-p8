@@ -5,7 +5,6 @@ import SlideMenu from './js/SlideMenu';
 import ListError from './js/ListError';
 import MapError from './js/MapError';
 import escapeRegExp from 'escape-string-regexp';
-//import hamburger from './images/hamburger-menu-white.png';
 
 class App extends Component {
   constructor(props) {
@@ -68,9 +67,20 @@ class App extends Component {
 
     return(
       <div className="App">
-      <button className="hamburger-btn" onClick={this.showHide}>&#9776;</button>
+        <button
+          className="hamburger-btn"
+          aria-label="Open the navigation menu with the museum's locations"
+          onClick={this.showHide}
+          tabIndex="0"
+          >&#9776;
+        </button>
         <div id={openOrClose} className="sidenav">
-          <button className="closebtn" onClick={this.showHide}>&times;</button>
+          <button
+            className="closebtn"
+            aria-label="Close the navigation menu"
+            onClick={this.showHide}
+            >&times;
+          </button>
           <h1 tabIndex="0">Musea Finder Paderborn</h1>
           <input
             className="museums-filter"
@@ -79,6 +89,7 @@ class App extends Component {
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
             type="text"
+            autoFocus
           />
           {(filteredMuseums)
             ?
@@ -102,6 +113,7 @@ class App extends Component {
                 onHandleClick={this.onHandleClick}
                 animateMarker={this.state.animateMarker}
                 hasError={this.state.hasError}
+
               />
             </MapError>
         </section>

@@ -26,7 +26,7 @@
 /*---- End of Close Navigation Menu and deplace map to left -----*/
 
 .sidenav {
-  height: 100%;
+  height: 100vh;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -74,6 +74,7 @@ ul {
 .hamburger-btn:hover {
   color: #f1f1f1;
   background-color: orange;
+  cursor: pointer;
 }
 
 .sidenav .closebtn {
@@ -89,12 +90,12 @@ ul {
 }
 
 .hamburger-btn {
-  font-size: 30px;
+  font-size: 4vh;
   cursor: pointer;
   color: #f1f1f1;
   background-color: transparent;
   border: transparent;
-  border-radius: 50%;
+  border-radius: 10%;
   margin-left: 12px;
   height: 2em;
 }
@@ -123,13 +124,24 @@ html, body {
 }
 
 .map-container {
-  background-color: black;
+  position: fixed;
+  background-color: pink;
   transition: margin-left .5s;
+  width: 100vw;
+  height: 82vh;
 }
 
 .container-element {
   width: 100vw;
-  height: 87vh;
+  height: 82vh;
+}
+.my-frame {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 2147483647;
 }
 
 #map {
@@ -160,6 +172,8 @@ html, body {
 }
 .map-element {
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 h1.list-error {
   margin: 50px 0 5px 0;
@@ -172,15 +186,38 @@ h1.list-error {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+/* -------------------------- Beginn of Footer -----------------------------*/
 footer {
+  position: absolute;
   background-color: black;
   text-align: center;
+  bottom: 20px;
+  width: 100vw;
+  height: 4vh;
+  padding: 0 32px 52px 52px;
+  margin: 0;
 }
 
 p {
   color: #ac9b9b;
+  display: inline-block;
+  padding: 0.2em;
 }
 
+a {
+  text-decoration: none;
+}
+
+strong {
+  color: #ffa500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------- End of Footer -----------------------------*/
 /*-------------------- Media Queries --------------------*/
 
 /*-------------------- Side Navigation push (off-canvas) --------------------*/

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import ReactDOM from 'react-dom';
 import Map from './js/Map';
 import SlideMenu from './js/SlideMenu';
-import ListError from './js/ListError';
+import Footer from './js/Footer'
 import MapError from './js/MapError';
+import ListError from './js/ListError';
 import escapeRegExp from 'escape-string-regexp';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class App extends Component {
         openMenu: false,
         hasError: false
       }
+    //Bind `this` to event-handler functions
     this.onHandleClick = this.onHandleClick.bind(this)
     this.showHide = this.showHide.bind(this)
   }
@@ -51,6 +54,7 @@ class App extends Component {
     // Filter the museum's markers
     let filteredMuseums;
     if (this.state.query) {
+      console.log('This query functions!');
       const match = new RegExp(escapeRegExp(this.state.query), 'i')
       filteredMuseums = this.state.museums.filter((museum) => match.test(museum.name))
     } else {
@@ -59,64 +63,72 @@ class App extends Component {
 
     // Apply style to navigation menu and the map to open or close the menu
     let openOrClose = "navToLeft";
-    let leftOrRight = "mapToLeft"
-    if (this.state.openMenu === true) {
-      openOrClose = "navToRight";
-      leftOrRight = "mapToRight";
+    let leftOrRight = "mapToLeft";
+    let positiveOrNegative = "-1";
+    if (this.state.openMenu) {
+      openOrClose = "navToRight"
+      leftOrRight = "mapToRight"
+      positiveOrNegative = "0"
     }
 
     return(
       <div className="App">
-        <button
-          className="hamburger-btn"
-          aria-label="Open the navigation menu with the museum's locations"
-          onClick={this.showHide}
-          tabIndex="0"
-          >&#9776;
-        </button>
-        <div id={openOrClose} className="sidenav">
+        <main role="main">
           <button
-            className="closebtn"
-            aria-label="Close the navigation menu"
-            onClick={this.showHide}
-            >&times;
-          </button>
-          <h1 tabIndex="0">Musea Finder Paderborn</h1>
-          <input
-            className="museums-filter"
-            aria-label="Filter the list of museums"
-            placeholder="Filter Museums"
-            value={this.state.query}
-            onChange={(event) => this.updateQuery(event.target.value)}
-            type="text"
             autoFocus
-          />
-          {(filteredMuseums)
-            ?
-            <SlideMenu
-              museums={this.state.museums}
-              filteredMuseums={filteredMuseums}
-              onHandleClick={this.onHandleClick}
-              hasError={this.state.hasError}
+            className="hamburger-btn"
+            aria-label="Open the navigation menu with the museum's locations"
+            onClick={this.showHide}
+            tabIndex="0"
+            >&#9776;
+          </button>
+          <nav id={openOrClose} className="sidenav">
+            <button
+              autoFocus
+              tabIndex={positiveOrNegative}
+              className="closebtn"
+              aria-label="Close the navigation menu"
+              onClick={this.showHide}
+              >&times;
+            </button>
+            <h1 tabIndex={positiveOrNegative}>Musea Finder Paderborn</h1>
+            <input
+              autoFocus
+              tabIndex={positiveOrNegative}
+              className="museums-filter"
+              aria-label="Filter the list of museums"
+              placeholder="Filter Museums"
+              value={this.state.query}
+              onChange={(event) => this.updateQuery(event.target.value)}
+              type="text"
             />
-            :
-            <ListError />
-          }
-        </div>
-        <section id={leftOrRight} className="map-container" role="application">
-
+            {(filteredMuseums)
+              ?
+              <SlideMenu
+                //tabIndex={positiveOrNegative}
+                museums={this.state.museums}
+                filteredMuseums={filteredMuseums}
+                onHandleClick={this.onHandleClick}
+                hasError={this.state.hasError}
+              />
+              :
+              <ListError />
+            }
+          </nav>
+          <section id={leftOrRight} className="map-container" role="application">
             <MapError>
               <Map
                 museums={this.state.museums}
                 filteredMuseums={filteredMuseums}
-                onMarkerClick={this.toggleInfoWindow}
+                //onMarkerClick={this.toggleInfoWindow}
                 onHandleClick={this.onHandleClick}
                 animateMarker={this.state.animateMarker}
                 hasError={this.state.hasError}
-
               />
             </MapError>
-        </section>
+          </section>
+        </main>
+        <Footer />
       </div>
     );
   }

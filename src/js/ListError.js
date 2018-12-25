@@ -11,10 +11,10 @@ const ListError = () => {
 
 export default ListError;*/
 
-import React from 'react';
+import React, { Component } from 'react';
 
 // https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror
-class ListError extends React.Component {
+class ListError extends Component {
   constructor(props) {
     super(props);
     this.state = {

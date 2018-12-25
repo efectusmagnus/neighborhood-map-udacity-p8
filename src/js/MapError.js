@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror
-class MapError extends React.Component {
+class MapError extends Component {
   constructor(props) {
     super(props);
     this.state = {

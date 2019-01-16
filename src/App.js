@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Map from './js/Map';
-import SlideMenu from './js/SlideMenu';
+import MuseumsList from './js/MuseumsList';
 import Footer from './js/Footer'
 import MapError from './js/MapError';
 import ListError from './js/ListError';
@@ -104,7 +104,7 @@ class App extends Component {
             />
             {(filteredMuseums)
               ?
-              <SlideMenu
+              <MuseumsList
                 //tabIndex={positiveOrNegative}
                 museums={this.state.museums}
                 filteredMuseums={filteredMuseums}

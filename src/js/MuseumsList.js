@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-class SlideMenu extends Component {
+class MuseumsList extends Component {
   constructor(props) {
     super(props)
   }
   handleClick(e,key) {
-    console.log("The click functions");
+    console.log("The click functions")
     this.props.onHandleClick(e, key)
   }
 
   render() {
-    let filteredMuseums = this.props.filteredMuseums;
-    let museums = this.props.museums;
+    let filteredMuseums = this.props.filteredMuseums
+    let museums = this.props.museums
     return(
 
       <nav key="drawer" className="nav">
@@ -32,4 +32,4 @@ class SlideMenu extends Component {
   }
 }
 
-export default SlideMenu;
+export default MuseumsList

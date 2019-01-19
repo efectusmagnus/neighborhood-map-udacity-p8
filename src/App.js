@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Map from './js/Map';
 import MuseumsList from './js/MuseumsList';
 import Footer from './js/Footer'
@@ -54,7 +53,6 @@ class App extends Component {
     // Filter the museum's markers
     let filteredMuseums;
     if (this.state.query) {
-      console.log('This query functions!');
       const match = new RegExp(escapeRegExp(this.state.query), 'i')
       filteredMuseums = this.state.museums.filter((museum) => match.test(museum.name))
     } else {
@@ -120,7 +118,6 @@ class App extends Component {
               <Map
                 museums={this.state.museums}
                 filteredMuseums={filteredMuseums}
-                //onMarkerClick={this.toggleInfoWindow}
                 onHandleClick={this.onHandleClick}
                 animateMarker={this.state.animateMarker}
                 hasError={this.state.hasError}

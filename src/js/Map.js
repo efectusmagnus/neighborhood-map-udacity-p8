@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
 import MuseumsMarker from './MuseumsMarker';
-//import axios from 'axios';
+
 // See: https://medium.com/@yelstin.fernandes/render-a-map-component-using-react-google-maps-5f7fb3e418bb
 class Map extends Component {
-  constructor(props) {
-    super(props)
-      this.state = {
-        museums: []
-      }
-  }
 
   render() {
-    let animateMarker = this.props.animateMarker;
+    const animateMarker = this.props.animateMarker;
     // Generate map from react-google-maps
     const MyMap = withGoogleMap(props => (
       <GoogleMap
@@ -51,4 +44,4 @@ class Map extends Component {
   }
 };
 
-export default Map;
+export default Map

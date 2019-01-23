@@ -19,11 +19,11 @@ class App extends Component {
       }
     //Bind `this` to event-handler functions
     this.onHandleClick = this.onHandleClick.bind(this)
-    this.showHide = this.showHide.bind(this)
+    this.onShowHide = this.onShowHide.bind(this)
   }
   componentDidMount() {
     // Fetch data from Foursquare
-    fetch('https://api.foursquare.com/v2/venues/search?ll=51.718922,8.757509&categoryId=4bf58dd8d48988d181941735&client_id=LLJCIDDYXOKBAJ4AVOO5AEYPFW15KJ3OVUAWLKKCKDGWJDKI&client_secret=E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT&v=20180323&radius=5000')
+    fetch('https://api.foursquare.com/v2/venues/search?ll=51.718922,8.757509&categoryId=4bf58dd8d48988d181941735&client_id=LLJCIDDYXOKBAJ4AVOO5AEYPFW15KJ3OVUAWLKKCKDGWJDKI&client_secret=E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT&v=20180323&radius=5000&VENUE_ID/photos')
     .then(response => response.json())
     .then(data => this.setState({museums: data.response.venues}))
     .catch(error => this.setState({hasError: true}))
@@ -43,7 +43,7 @@ class App extends Component {
   }
   // This is for the hamburger menu
   // Open/close the navigation menu
-  showHide() {
+  onShowHide() {
     const openMenu = this.state.openMenu;
     this.setState({
       openMenu: !openMenu
@@ -76,7 +76,7 @@ class App extends Component {
             autoFocus
             className="hamburger-btn"
             aria-label="Open the navigation menu with the museum's locations"
-            onClick={this.showHide}
+            onClick={this.onShowHide}
             tabIndex="0"
             >&#9776;
           </button>
@@ -86,7 +86,7 @@ class App extends Component {
               tabIndex={positiveOrNegative}
               className="closebtn"
               aria-label="Close the navigation menu"
-              onClick={this.showHide}
+              onClick={this.onShowHide}
               >&times;
             </button>
             <h1 tabIndex={positiveOrNegative}>Musea Finder Paderborn</h1>
@@ -103,12 +103,14 @@ class App extends Component {
             {(filteredMuseums)
               ?
               <MuseumsList
-                //tabIndex={positiveOrNegative}
+                tabIndex={this.props.positiveOrNegative}
                 museums={this.state.museums}
                 filteredMuseums={filteredMuseums}
                 onHandleClick={this.onHandleClick}
                 hasError={this.state.hasError}
-              />
+              >
+                {this.props.children}
+              </MuseumsList>
               :
               <ListError />
             }

@@ -5,6 +5,7 @@ import MuseumsMarker from './MuseumsMarker';
 // See: https://medium.com/@yelstin.fernandes/render-a-map-component-using-react-google-maps-5f7fb3e418bb
 class Map extends Component {
 
+
   render() {
     const animateMarker = this.props.animateMarker;
     // Generate map from react-google-maps
@@ -12,15 +13,12 @@ class Map extends Component {
       <GoogleMap
         defaultCenter = {{lat: 51.718922, lng: 8.757509}}
         defaultZoom = {15}
-        onTilesloaded={() =>
-          // Add title to iframe
-          (document.getElementsByTagName('iframe')[0].title = 'GoogleMaps')
-        }
       >
       {this.props.filteredMuseums && this.props.filteredMuseums.map(marker => (
         <MuseumsMarker
           marker={marker}
           key={marker.id}
+          id={marker.id}
           animateMarker={animateMarker}
           hasError={this.props.hasError}
         />
@@ -40,7 +38,7 @@ class Map extends Component {
           }
         />
       </div>
-    );
+    );  
   }
 };
 

@@ -113,6 +113,7 @@ html, body {
   text-rendering: optimizeLegibility;
   font-family: monospace, sans-serif;
   background-color: black;
+  overflow: hidden;
 }
 
 .container {
@@ -149,14 +150,6 @@ html, body {
   width: 100vw;
 }
 
-.container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .museums-item {
   width: 30vw;
 }
@@ -186,23 +179,68 @@ h1.list-error {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+/* -------------------------- Beginn of MapError -----------------------------*/
+.error-message {
+  text-align: center;
+  padding: 1em;
+}
+/*-- owl's svg code --*/
+.project-main-cover {
+  overflow:hidden; /*without scrollbars*/
+  position: relative;
+  width: 80%;
+  padding-top: 1.5em;
 
+}
+/*-- beginn of owl svg code --*/
+.corp{
+  fill:#7d97ad;
+}
+.w-eye{ /*white eyes*/
+  fill:#fff; /*#ffffff*/
+}
+.gray{
+  fill:#2d3c49;
+}
+.nose{
+  fill:#ededed;
+  stroke:#1d1d1b;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
+.wing{
+  opacity:0.36;
+  fill:#2d3c49;
+}
+.bubble{
+  fill:none;
+  stroke:#1d1d1b;
+  stroke-width:0.5846px;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
+.welcome {
+  /*font-family: 'Nanum Pen Script', cursive; */
+  font-family: monospace, sans-serif;
+  font-size: 1em;
+}
+/*-- ends of owl svg code --*/
+/* ---------------------------- End of MapError ------------------------------*/
 /* -------------------------- Beginn of Footer -----------------------------*/
 footer {
   position: absolute;
   background-color: black;
   text-align: center;
-  bottom: 20px;
+  bottom: 0;
   width: 100vw;
-  height: 4vh;
-  padding: 0 32px 52px 52px;
-  margin: 0;
+  padding: 0 10px 10px 10px;
 }
 
 p {
   color: #ac9b9b;
   display: inline-block;
-  padding: 0.2em;
+  /*margin: 0.5em 0 0.5em 0;*/
+  height: 4vh;
 }
 
 a {

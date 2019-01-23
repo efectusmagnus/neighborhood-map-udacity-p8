@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 class MuseumsList extends Component {
 
-  handleClick(e,key) {
+  handleClick(e, key) {
     this.props.onHandleClick(e, key)
   }
 
   render() {
     let filteredMuseums = this.props.filteredMuseums
+
     return(
       <nav key="drawer" className="nav">
         {filteredMuseums &&
@@ -16,7 +17,11 @@ class MuseumsList extends Component {
               id={museum.id}
               key={museum.id}
               className="list-item"
-              tabIndex={this.props.openMenu ? "-1" : "0"}
+              role="menuitem"
+              tabIndex="0"
+              //tabIndex={this.props.openMenu ? "-1" : "0"}
+              //tabIndex={this.props.positiveOrNegative}
+              //tabIndex={this.props.openMenu ? "-1" : "0"}
               onClick={(e, key) => this.handleClick(e, museum.id)}
             >{museum.name}
             </li>))}

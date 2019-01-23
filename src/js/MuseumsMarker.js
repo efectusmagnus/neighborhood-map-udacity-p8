@@ -7,23 +7,24 @@ class MuseumsMarker extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showingInfoWindow: false,
+      openInfoWindow: false,
       animation: '',
     }
     this.onMarkerClick = this.onMarkerClick.bind(this);
   }
   onMarkerClick = (e, key) => {
     const openInfoWindow = this.state.openInfoWindow
+
     this.setState({
-      showingInfoWindow: !showingInfoWindow
+      openInfoWindow: !openInfoWindow
     });
   }
 
   render() {
     const openInfoWindow = this.state.openInfoWindow
     const animateMarker = this.props.animateMarker
-    const animation = this.state.animation
-    if (animateMarker && infoWindowOpen === false) {
+    
+    if (animateMarker && openInfoWindow === false) {
       animateMarker.map(m => {
         if (m.id === this.props.id) {
           this.setState({
@@ -43,7 +44,6 @@ class MuseumsMarker extends Component {
         title={marker.name}
         icon={museumIcon}
         position={{lat: marker.location.lat, lng: marker.location.lng}}
-        //onClick={this.onMarkerClick}
         onClick={(e, key) => this.onMarkerClick(e, this.props.marker.id)}
         animation={this.state.animation}
       >

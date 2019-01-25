@@ -1,4 +1,10 @@
+.museum-icon {
+  height: 20px;
+}
 
+.popup-decoration {
+  width: 15em;
+}
 /*-------------------- Side Navigation push (off-canvas) --------------------*/
 /*-- source inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push ---*/
 

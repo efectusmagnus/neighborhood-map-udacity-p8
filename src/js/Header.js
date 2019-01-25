@@ -23,14 +23,14 @@ class Header extends Component {
     })
   }
   // Apply style to navigation menu and the map to open or close the menu
-  let openOrClose = "navToLeft";
+  //let openOrClose = "navToLeft";
   //let leftOrRight = "mapToLeft";
-  let positiveOrNegative = "-1";
-  if (this.state.openMenu === true) {
+  //let positiveOrNegative = "-1";
+  /*if (this.state.openMenu === true) {
     openOrClose = "navToRight";
     //leftOrRight = "mapToRight";
     positiveOrNegative = "0";
-  }
+  }*/
   render() {
     return(
       <header>
@@ -64,8 +64,7 @@ class Header extends Component {
           />
           {(filteredMuseums)
             ?
-            <SlideMenu
-              tabIndex={positiveOrNegative}
+            <MuseumsList
               museums={this.state.museums}
               filteredMuseums={filteredMuseums}
               onHandleClick={this.onHandleClick}
@@ -79,3 +78,4 @@ class Header extends Component {
     )
   }
 }
+export default Header

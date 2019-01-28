@@ -2,18 +2,41 @@ import React from 'react'
 import { InfoWindow } from 'react-google-maps'
 
 function MuseumsPopup(props) {
-  let marker = props.marker;
-  let image = marker.categories[0].icon.prefix;
+  const marker = props.marker;
+
   return(
-    <InfoWindow>
+
+    <InfoWindow
+      role="dialog"
+      tabIndex="0"
+    >
       <div className="popup-decoration">
-      <h3>{marker.name}</h3>
-      <p>{marker.location.address}</p>
-      <p>{marker.location.postalCode}</p>
-      <p className="credits">Credits to
-      <a href="https://foursquare.com"> Foursquare</a></p>
+        <h3
+          className="popup-title"
+          tabIndex="0">
+          {marker.name ?
+            marker.name : "no place's name available "}
+        </h3>
+        <p
+          className="popup-text"
+          tabIndex="0">
+          {marker.location.address ?
+            marker.location.address + ', ': 'no address available, '}
+        </p>
+        <p
+          className="popup-text"
+          tabIndex="0">
+          {marker.location.postalCode ?
+            marker.location.postalCode + '. ': 'no postal code available. '}
+        </p>
+        <p
+          tabIndex="0"
+          className="credits">Credits to
+          <a href="https://foursquare.com"> Foursquare</a>
+        </p>
+      </div>
     </InfoWindow>
   )
 }
 
-export default MuseumsPopup;
+export default MuseumsPopup

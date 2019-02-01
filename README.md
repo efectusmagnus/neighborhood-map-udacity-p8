@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Neighborhood Map - Udacity Project N°8.
+
+## Description
+
+The aim of this project is a single page application that features a map of Paderborn's Museums. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and includes highlighted locations that are fetched from the Foursquare API, which are shown in a list of museums' names and can be searched through a filter input field. Such locations are shown in the Google Maps thanks to the Google Maps API.
+
+
 
 ## Available Scripts
 

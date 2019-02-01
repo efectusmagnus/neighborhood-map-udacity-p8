@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 class MuseumsList extends Component {
 
-  handleClick(e, key) {
-    this.props.onHandleClick(e, key)
+  listItemClick(e, key) {
+    this.props.onListItemClick(e, key)
   }
 
   render() {
@@ -17,12 +17,9 @@ class MuseumsList extends Component {
               id={museum.id}
               key={museum.id}
               className="list-item"
-              role="menuitem"
+              //role="menuitem"
               tabIndex="0"
-              //tabIndex={this.props.openMenu ? "-1" : "0"}
-              //tabIndex={this.props.positiveOrNegative}
-              //tabIndex={this.props.openMenu ? "-1" : "0"}
-              onClick={(e, key) => this.handleClick(e, museum.id)}
+              onClick={(e, key) => this.listItemClick(e, museum.id)}
             >{museum.name}
             </li>))}
           </ul>

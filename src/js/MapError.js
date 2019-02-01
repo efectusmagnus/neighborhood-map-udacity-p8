@@ -21,6 +21,7 @@ class MapError extends Component {
             class="img project-main-cover"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 221.4 94"
+            alt="Owl saying: wait."
             aria-label="owl">
             <svg class="img welcome" xmlns="http://www.w3.org/2000/svg" version="1.1">
               <desc>A owl looking at the left</desc>
@@ -41,6 +42,7 @@ class MapError extends Component {
               class="img project-main-cover"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 221.4 94"
+              alt="Owl saying: no internet."
               aria-label="owl">
               <svg class="img welcome" xmlns="http://www.w3.org/2000/svg" version="1.1">
                 <desc>A owl looking at the left</desc>

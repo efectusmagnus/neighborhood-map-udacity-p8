@@ -1,14 +1,23 @@
-.museum-icon {
-  height: 20px;
-}
-
+/*------------------------------- Beginn of InfoWindow -----------------------*/
 .popup-decoration {
   width: 15em;
 }
+
+.popup-title {
+  color: orange;
+}
+.popup-text {
+  margin: 0;
+  padding-right: 0.5em;
+  display: ruby;
+  color: #5a3e43;
+}
+/*------------------------------- End of InfoWindow --------------------------*/
+
 /*-------------------- Side Navigation push (off-canvas) --------------------*/
 /*-- source inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push ---*/
 
-/*---- Beginn of Open Navigation Menu and deplace map to right -----*/
+/*---------- Beginn of Open Navigation Menu and deplace map to right ---------*/
 
 #navToRight {
   width: 250px;
@@ -18,9 +27,9 @@
   margin-left: 255px;
 }
 
-/*---- End of Open Navigation Menu and deplace map to right -----*/
+/*--------- End of Open Navigation Menu and deplace map to right -------------*/
 
-/*---- Beginn of Close Navigation Menu and deplace map to left -----*/
+/*--------- Beginn of Close Navigation Menu and deplace map to left ----------*/
 
 #navToLeft {
   width: 0;
@@ -29,7 +38,7 @@
 #mapToLeft {
   margin-left: 0;
 }
-/*---- End of Close Navigation Menu and deplace map to left -----*/
+/*------------ End of Close Navigation Menu and deplace map to left ----------*/
 
 .sidenav {
   height: 100vh;

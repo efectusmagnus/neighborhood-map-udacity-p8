@@ -2,15 +2,19 @@
 
 ## Description
 
-The aim of this project is a single page application that features a map of Paderborn's Museums. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and includes highlighted locations that are fetched from the Foursquare API, which are shown in a list of museums' names and can be searched through a filter input field. Such locations are shown in the Google Maps thanks to the Google Maps API.
+The aim of this project is a single page application that features a map of Paderborn's Museums. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and includes highlighted locations that are fetched from the [Foursquare API](https://developer.foursquare.com/docs/api), which are shown in a list of museums' names and can be searched through a filter input field. Such locations are shown in the custom Google map thanks to the [Google Maps API](https://developers.google.com/maps/documentation/javascript/reference/). The Google map shows a custom infowindow with Foursquare data when a museum's marker or a museum's name is clicked.
 
+## Prerequisites
 
+To run this application you need your own [Google Maps API](https://console.cloud.google.com/google/maps-apis/), as well as your own [Foursquare API](https://developer.foursquare.com/docs/api). Both are free for developement purposes.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Fork this repository.
+Install the dependencies with `npm install` or `yarn install`.
+(For this project, Yarn was used. However, you can use `npm` instead). In the project directory, you can run:
 
-### `npm start`
+### `yarn start` or `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -33,18 +37,17 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Authors
+
+All work, code snippet or inspiration code is referenced before the code inside the app. If not, it's from Efectusmagnus.
+
+## Distribution
+
+Only for educational purposes.

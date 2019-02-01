@@ -17,13 +17,13 @@ class MuseumsMarker extends Component {
     this.onMarkerMouseOver = this.onMarkerMouseOver.bind(this);
     this.onMarkerMouseOut = this.onMarkerMouseOut.bind(this);
   }
-  // Open the InfoWindow with a click on the Marker
-  onMarkerClick() {
-    const openInfoWindow = this.state.openInfoWindow
 
+  // Open the InfoWindow with a click on the Marker
+  onMarkerClick(e, key) {
+    const openInfoWindow = this.state.openInfoWindow
     this.setState({
       openInfoWindow: !openInfoWindow
-    });
+    })
   }
   // Inspiration of mouse over effect from:
   // http://blog.sodhanalibrary.com/2016/07/change-image-source-on-mouse-hover.html#.XEjnD817ncs
@@ -45,26 +45,27 @@ class MuseumsMarker extends Component {
     const animateMarker = this.props.animateMarker
 
     if (animateMarker && openInfoWindow === false) {
-      animateMarker.map(m => {
-        if (m.id === this.props.id) {
-          this.setState({
-            openInfoWindow: !openInfoWindow,
-            animation: 4,
-          })
-        }
-      })
+      animateMarker.filter(m => m.id === this.props.id)
+      .map(m => this.setState({
+        openInfoWindow: !openInfoWindow,
+        animation: 4
+      }))
     }
+
     const marker = this.props.marker;
 
     return(
       <Marker
+        autoFocus
+        tabIndex="0"
         key={marker.title}
         className="museum-icon"
         title={marker.name}
         icon={this.state.imgSrc}
-        style={{'height': "20em"}}
+        alt="museum's icon"
+        style={{width: 32, height: 41}}
         position={{lat: marker.location.lat, lng: marker.location.lng}}
-        onClick={this.onMarkerClick}
+        onClick={(e, key) => this.onMarkerClick(e, this.props.marker.id)}
         onMouseOver={this.onMarkerMouseOver}
         onMouseOut={this.onMarkerMouseOut}
         animation={this.state.animation}
@@ -83,3 +84,13 @@ class MuseumsMarker extends Component {
 }
 
 export default MuseumsMarker;
+/*if (animateMarker && openInfoWindow === false) {
+  animateMarker.map(m => {
+    if (m.id === this.props.id) {
+      this.setState({
+        openInfoWindow: !openInfoWindow,
+        animation: 4,
+      })
+    }
+  })
+}*/

@@ -18,25 +18,25 @@ class App extends Component {
         hasError: false
       }
     //Bind `this` to event-handler functions
-    this.onHandleClick = this.onHandleClick.bind(this)
+    this.onListItemClick = this.onListItemClick.bind(this)
     this.onShowHide = this.onShowHide.bind(this)
   }
   componentDidMount() {
     // Fetch data from Foursquare
-    fetch('https://api.foursquare.com/v2/venues/search?ll=51.718922,8.757509&categoryId=4bf58dd8d48988d181941735&client_id=LLJCIDDYXOKBAJ4AVOO5AEYPFW15KJ3OVUAWLKKCKDGWJDKI&client_secret=E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT&v=20180323&radius=5000&VENUE_ID/photos')
+    fetch('https://api.foursquare.com/v2/venues/search?ll=51.718922,8.757509&categoryId=4bf58dd8d48988d181941735&client_id=LLJCIDDYXOKBAJ4AVOO5AEYPFW15KJ3OVUAWLKKCKDGWJDKI&client_secret=E35XKXD4EEL5QJIEOD5YEVBDBIHUWTCXWXLV1ZOE2CVVP3VT&v=20180323&radius=5000')
     .then(response => response.json())
     .then(data => this.setState({museums: data.response.venues}))
     .catch(error => this.setState({hasError: true}))
   }
 
   // This is for the <input class="museums-filter">
+  // Set the query state to the value typed by the user
   updateQuery(query) {
     this.setState({query: query})
   }
-  // This is for the <li class="museums-filter">
-  // Set the query state to the value typed by the user
-  onHandleClick(e, key) {
-    let animateMarker = this.state.museums.filter(m => m.id === key)
+  // Click on an item of the menu list to animate its marker
+  onListItemClick(e, key) {
+    const animateMarker = this.state.museums.filter(m => m.id === key)
     this.setState({
       animateMarker: animateMarker
     })
@@ -60,9 +60,9 @@ class App extends Component {
     }
 
     // Apply style to navigation menu and the map to open or close the menu
-    let openOrClose = "navToLeft";
-    let leftOrRight = "mapToLeft";
-    let positiveOrNegative = "-1";
+    let openOrClose = "navToLeft"
+    let leftOrRight = "mapToLeft"
+    let positiveOrNegative = "-1"
     if (this.state.openMenu) {
       openOrClose = "navToRight"
       leftOrRight = "mapToRight"
@@ -106,7 +106,7 @@ class App extends Component {
                 tabIndex={this.props.positiveOrNegative}
                 museums={this.state.museums}
                 filteredMuseums={filteredMuseums}
-                onHandleClick={this.onHandleClick}
+                onListItemClick={this.onListItemClick}
                 hasError={this.state.hasError}
               >
                 {this.props.children}
@@ -118,9 +118,10 @@ class App extends Component {
           <section id={leftOrRight} className="map-container" role="application">
             <MapError>
               <Map
+                tabIndex="0"
                 museums={this.state.museums}
                 filteredMuseums={filteredMuseums}
-                onHandleClick={this.onHandleClick}
+                onListItemClick={this.onListItemClick}
                 animateMarker={this.state.animateMarker}
                 hasError={this.state.hasError}
               />

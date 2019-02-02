@@ -20,6 +20,7 @@ class MuseumsList extends Component {
               //role="menuitem"
               tabIndex="0"
               onClick={(e, key) => this.listItemClick(e, museum.id)}
+              onKeyPress={(e, key) => this.listItemClick(e, museum.id)}
             >{museum.name}
             </li>))}
           </ul>

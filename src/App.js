@@ -76,7 +76,7 @@ class App extends Component {
             <button
               autoFocus
               className="hamburger-btn"
-              aria-label="Open the navigation menu with the museum's locations"
+              aria-label="Open the navigation menu"
               onClick={this.onShowHide}
               tabIndex="0"
               >&#9776;

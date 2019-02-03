@@ -19,7 +19,7 @@ class MuseumsList extends Component {
     let filteredMuseums = this.props.filteredMuseums
 
     return(
-      <nav key="drawer" className="nav">
+      <div className="list-ctn">
         {filteredMuseums &&
           <ul className="nav-list">{filteredMuseums.map(museum => (
             <li
@@ -34,7 +34,7 @@ class MuseumsList extends Component {
             </li>))}
           </ul>
         }
-      </nav>
+      </div>
     );
   }
 }

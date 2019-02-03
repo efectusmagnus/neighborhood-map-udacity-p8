@@ -39,6 +39,10 @@
   margin-left: 0;
 }
 /*------------ End of Close Navigation Menu and deplace map to left ----------*/
+header {
+  width: 100vw;
+  height: 8vh;
+}
 
 .sidenav {
   height: 100vh;
@@ -49,6 +53,7 @@
   left: 0;
   background-color: #111;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
@@ -60,7 +65,11 @@
   padding: 0.5em;
   width: 13em;
 }
-
+.list-ctn {
+  height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 ul {
   padding: 0;
   margin: 0;
@@ -94,6 +103,8 @@ ul {
 
 .sidenav .closebtn {
   position: absolute;
+  width: 1.5em;
+  height: 1.5em;
   top: 12px;
   right: 25px;
   font-size: 36px;
@@ -110,9 +121,10 @@ ul {
   color: #f1f1f1;
   background-color: transparent;
   border: transparent;
-  border-radius: 10%;
-  margin-left: 12px;
-  height: 2em;
+  border-radius: 50%;
+  margin: 6px 0 0 12px;
+  height: 1.5em;
+  width: 1.5em;
 }
 
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
@@ -144,12 +156,12 @@ html, body {
   background-color: pink;
   transition: margin-left .5s;
   width: 100vw;
-  height: 82vh;
+  height: 84vh;
 }
 
 .container-element {
   width: 100vw;
-  height: 82vh;
+  height: 84vh;
 }
 .my-frame {
   position: fixed;
@@ -187,13 +199,6 @@ h1.list-error {
   margin: 50px 0 5px 0;
 }
 
-.header {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
 /* -------------------------- Beginn of MapError -----------------------------*/
 .error-message {
   text-align: center;
@@ -248,13 +253,13 @@ footer {
   text-align: center;
   bottom: 0;
   width: 100vw;
+  height: 8vh;
   padding: 0 10px 10px 10px;
 }
 
-p {
+.text {
   color: #ac9b9b;
   display: inline-block;
-  /*margin: 0.5em 0 0.5em 0;*/
   height: 4vh;
 }
 

@@ -72,14 +72,16 @@ class App extends Component {
     return(
       <div className="App">
         <main role="main">
-          <button
-            autoFocus
-            className="hamburger-btn"
-            aria-label="Open the navigation menu with the museum's locations"
-            onClick={this.onShowHide}
-            tabIndex="0"
-            >&#9776;
-          </button>
+          <header>
+            <button
+              autoFocus
+              className="hamburger-btn"
+              aria-label="Open the navigation menu with the museum's locations"
+              onClick={this.onShowHide}
+              tabIndex="0"
+              >&#9776;
+            </button>
+          </header>
           <nav id={openOrClose} className="sidenav">
             <button
               autoFocus

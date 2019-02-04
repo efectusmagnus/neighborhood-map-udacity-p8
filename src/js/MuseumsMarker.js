@@ -84,13 +84,3 @@ class MuseumsMarker extends Component {
 }
 
 export default MuseumsMarker;
-/*if (animateMarker && openInfoWindow === false) {
-  animateMarker.map(m => {
-    if (m.id === this.props.id) {
-      this.setState({
-        openInfoWindow: !openInfoWindow,
-        animation: 4,
-      })
-    }
-  })
-}*/

@@ -22,7 +22,8 @@ class MuseumsMarker extends Component {
   onMarkerClick(e, key) {
     const openInfoWindow = this.state.openInfoWindow
     this.setState({
-      openInfoWindow: !openInfoWindow
+      openInfoWindow: !openInfoWindow,
+      animation: 4
     })
   }
   // Inspiration of mouse over effect from:

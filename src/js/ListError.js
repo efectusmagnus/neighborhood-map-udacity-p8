@@ -1,16 +1,3 @@
-/*import React from 'react';
-
-const ListError = () => {
-  return(
-    <div>
-      <h1 className="list-error">There is a problem with the loading</h1>
-      <p>List of Foursquare did not load. Try again later</p>
-    </div>
-  )
-}
-
-export default ListError;*/
-
 import React, { Component } from 'react';
 
 // https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror

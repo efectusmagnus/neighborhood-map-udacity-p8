@@ -1,48 +1,23 @@
-/*------------------------------- Beginn of InfoWindow -----------------------*/
-.popup-decoration {
-  width: 15em;
+*, :after, :before {
+  box-sizing: border-box;
 }
 
-.popup-title {
-  color: orange;
-}
-.popup-text {
+html, body {
   margin: 0;
-  padding-right: 0.5em;
-  display: ruby;
-  color: #5a3e43;
-}
-/*------------------------------- End of InfoWindow --------------------------*/
-
-/*-------------------- Side Navigation push (off-canvas) --------------------*/
-/*-- source inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push ---*/
-
-/*---------- Beginn of Open Navigation Menu and deplace map to right ---------*/
-
-#navToRight {
-  width: 250px;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-family: monospace, sans-serif;
+  background-color: black;
+  overflow: hidden;
 }
 
-#mapToRight {
-  margin-left: 255px;
-}
-
-/*--------- End of Open Navigation Menu and deplace map to right -------------*/
-
-/*--------- Beginn of Close Navigation Menu and deplace map to left ----------*/
-
-#navToLeft {
-  width: 0;
-}
-
-#mapToLeft {
-  margin-left: 0;
-}
-/*------------ End of Close Navigation Menu and deplace map to left ----------*/
 header {
   width: 100vw;
   height: 8vh;
 }
+
+/*-------------------- Side Navigation push (off-canvas) --------------------*/
+/*-- source inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push ---*/
 
 .sidenav {
   height: 100vh;
@@ -129,20 +104,29 @@ ul {
 
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
 
-*, :after, :before {
-  box-sizing: border-box;
+/*---------- Beginn of Open Navigation Menu and deplace map to right ---------*/
+
+#navToRight {
+  width: 250px;
 }
 
-html, body {
-  /*height: 100%;*/
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-  font-family: monospace, sans-serif;
-  background-color: black;
-  overflow: hidden;
+#mapToRight {
+  margin-left: 255px;
 }
 
+/*--------- End of Open Navigation Menu and deplace map to right -------------*/
+
+/*--------- Beginn of Close Navigation Menu and deplace map to left ----------*/
+
+#navToLeft {
+  width: 0;
+}
+
+#mapToLeft {
+  margin-left: 0;
+}
+/*------------ End of Close Navigation Menu and deplace map to left ----------*/
+/*--------------------------------- Beginn of Map ----------------------------*/
 .container {
   display: flex;
   width: 100vw;
@@ -180,11 +164,6 @@ html, body {
 .museums-item {
   width: 30vw;
 }
-.credits {
-  font-size: 1em;
-  color: blue;
-  margin: 1% 0;
-}
 
 .museumIcon {
   width: 75px;
@@ -198,7 +177,29 @@ html, body {
 h1.list-error {
   margin: 50px 0 5px 0;
 }
+/*------------------------------- End of Map ---------------------------------*/
+/*------------------------------- Beginn of InfoWindow -----------------------*/
+.popup-decoration {
+  width: 15em;
+}
 
+.popup-title {
+  color: orange;
+}
+
+.popup-text {
+  margin: 0;
+  padding-right: 0.5em;
+  display: ruby;
+  color: #5a3e43;
+}
+
+.credits {
+  font-size: 1em;
+  color: blue;
+  margin: 1% 0;
+}
+/*------------------------------- End of InfoWindow --------------------------*/
 /* -------------------------- Beginn of MapError -----------------------------*/
 .error-message {
   text-align: center;
@@ -206,7 +207,7 @@ h1.list-error {
 }
 /*-- owl's svg code --*/
 .project-main-cover {
-  overflow:hidden; /*without scrollbars*/
+  overflow:hidden;
   position: relative;
   width: 80%;
   padding-top: 1.5em;
@@ -216,7 +217,7 @@ h1.list-error {
 .corp{
   fill:#7d97ad;
 }
-.w-eye{ /*white eyes*/
+.w-eye{
   fill:#fff; /*#ffffff*/
 }
 .gray{
@@ -240,7 +241,6 @@ h1.list-error {
   stroke-miterlimit:10;
 }
 .welcome {
-  /*font-family: 'Nanum Pen Script', cursive; */
   font-family: monospace, sans-serif;
   font-size: 1em;
 }
@@ -294,34 +294,3 @@ a:hover {
   }
 }
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
-
-/*
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/

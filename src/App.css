@@ -287,6 +287,12 @@ a:hover {
     font-size: 18px;
   }
 }
+
+@media screen and (min-height: 501px) {
+  #mapToRight {
+    width: calc(100vw - 255px);
+  }
+}
 /*---------------- End of Side Navigation push (off-canvas)------------------*/
 
 /*

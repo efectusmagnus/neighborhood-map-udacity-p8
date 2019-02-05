@@ -21,12 +21,12 @@ class MuseumsList extends Component {
     return(
       <div className="list-ctn">
         {filteredMuseums &&
-          <ul className="nav-list">{filteredMuseums.map(museum => (
+          <ul role="menubar" className="nav-list">{filteredMuseums.map(museum => (
             <li
               id={museum.id}
               key={museum.id}
               className="list-item"
-              //role="menuitem"
+              role="menuitem"
               tabIndex="0"
               onClick={(e, key) => this.listItemClick(e, museum.id)}
               onKeyPress={(e, key) => this.listItemPressEnter(e, museum.id)}

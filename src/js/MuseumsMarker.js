@@ -56,30 +56,31 @@ class MuseumsMarker extends Component {
     const marker = this.props.marker;
 
     return(
-      <Marker
-        autoFocus
-        tabIndex="0"
-        key={marker.title}
-        className="museum-icon"
-        title={marker.name}
-        icon={this.state.imgSrc}
-        alt="museum's icon"
-        style={{width: 32, height: 41}}
-        position={{lat: marker.location.lat, lng: marker.location.lng}}
-        onClick={(e, key) => this.onMarkerClick(e, this.props.marker.id)}
-        onMouseOver={this.onMarkerMouseOver}
-        onMouseOut={this.onMarkerMouseOut}
-        animation={this.state.animation}
-      >
-        <React.Fragment>
-          {this.state.openInfoWindow === true && (
-            <React.Fragment>{
-              this.props.hasError === false && (
-              <MuseumsPopup marker={marker} />)
-            }</React.Fragment>
-          )}
-        </React.Fragment>
-      </Marker>
+      <div style={{width: 32, height: 41}}>
+        <Marker
+          autoFocus
+          tabIndex="0"
+          key={marker.title}
+          title={marker.name}
+          icon={this.state.imgSrc}
+          alt="museum's icon"
+          style={{width: 32, height: 41}}
+          position={{lat: marker.location.lat, lng: marker.location.lng}}
+          onClick={(e, key) => this.onMarkerClick(e, this.props.marker.id)}
+          onMouseOver={this.onMarkerMouseOver}
+          onMouseOut={this.onMarkerMouseOut}
+          animation={this.state.animation}
+        >
+          <React.Fragment>
+            {this.state.openInfoWindow === true && (
+              <React.Fragment>{
+                this.props.hasError === false && (
+                <MuseumsPopup marker={marker} />)
+              }</React.Fragment>
+            )}
+          </React.Fragment>
+        </Marker>
+      </div>
     )
   }
 }

@@ -96,11 +96,11 @@ class App extends Component {
               autoFocus
               tabIndex={positiveOrNegative}
               className="museums-filter"
+              type="text"
               aria-label="Filter the list of museums"
               placeholder="Filter Museums"
               value={this.state.query}
               onChange={(event) => this.updateQuery(event.target.value)}
-              type="text"
             />
             {(filteredMuseums)
               ?

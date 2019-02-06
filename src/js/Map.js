@@ -31,14 +31,14 @@ class Map extends Component {
           containerElement= {<div className="container-element" />}
           mapElement={
            <div className="map-element">
-            <iframe
+            {/*<iframe
               src="https://www.google.com/maps/embed/v3/place?key=AIzaSyBnR461-IpsYquMTh4jytwZceXMQrbHVeY"
-              title="Google Maps" className="my-frame" />
+              title="Google Maps" className="my-frame" />*/}
            </div>
           }
         />
       </div>
-    );  
+    );
   }
 };
 

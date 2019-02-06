@@ -4,6 +4,10 @@
 
 The aim of this project is a single page application that features a map of Paderborn's Museums. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and includes highlighted locations that are fetched from the [Foursquare API](https://developer.foursquare.com/docs/api), which are shown in a list of museums' names and can be searched through a filter input field. Such locations are shown in the custom Google map thanks to the [Google Maps API](https://developers.google.com/maps/documentation/javascript/reference/). The Google map shows a custom infowindow with Foursquare data when a museum's marker or a museum's name is clicked.
 
+![View of the Musea Finder close.](https://i.imgur.com/Xb7vSiS.png)
+
+
+![View of the Musea Finder open.](https://i.imgur.com/CfsnMTP.png)
 ## Prerequisites
 
 To run this application you need your own [Google Maps API](https://console.cloud.google.com/google/maps-apis/), as well as your own [Foursquare API](https://developer.foursquare.com/docs/api). Both are free for developement purposes.

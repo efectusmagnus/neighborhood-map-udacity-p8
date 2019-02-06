@@ -146,6 +146,7 @@ ul {
 .container-element {
   width: 100vw;
   height: 84vh;
+  overflow: hidden;
 }
 .my-frame {
   position: fixed;

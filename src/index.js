@@ -19,7 +19,7 @@ const PageNotFound = ({location}) => (
 
 ReactDOM.render(
   <BrowserRouter>
-  <Router>
+    <Router>
       <Switch>
         <Route path="/" alt="home page" exact component={ App } />
         <Redirect component={ PageNotFound } to="/" />

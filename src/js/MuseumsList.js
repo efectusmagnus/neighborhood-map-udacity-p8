@@ -4,6 +4,10 @@ class MuseumsList extends Component {
 
   listItemClick(e, key) {
     this.props.onListItemClick(e, key)
+    // If on mobile device, close the menu list after a click
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      this.props.onShowHide(e, key)
+    }
   }
   // Source: "https://www.w3schools.com/jsref/event_key_keycode.asp"
   listItemPressEnter(e, key) {
@@ -13,6 +17,7 @@ class MuseumsList extends Component {
     if (e.which === 13 || e.keyCode === 13) {
       // Trigger the button element with the enter key
       this.props.onListItemClick(e, key)
+      //this.props.onShowHide(e, key)
     }
   }
   render() {

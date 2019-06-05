@@ -1,14 +1,14 @@
 {
-  "short_name": "E Magnus",
-  "name": "Efectusmagnus",
+  "short_name": "Padermap",
+  "name": "Padermap",
   "icons": [
     {
-      "src": "/Efectusmagnus-white-192.png",
+      "src": "/Padermap-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/Efectusmagnus-white-512.png",
+      "src": "/Padermap-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
